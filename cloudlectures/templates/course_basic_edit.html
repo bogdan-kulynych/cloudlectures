@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% from "helpers/forms.html" import form_field, action_buttons %}
+{% block content %}
+<form method="POST" action="" class="form-horizontal span6 offset3">
+    <fieldset>
+        {% if legend %}
+            <legend>{{ legend }}</legend>
+        {% endif %}
+
+        {{ form.csrf_token }}
+        {{ form_field(form.name, maxlength=500, class="input-xlarge") }}
+        {{ form_field(form.desc, maxlength=500, class="input-xlarge") }}
+        {{ form_field(form.tags, class="input-xlarge") }}
+        {{ form_field(form.univ, class="input-xlarge") }}
+    </fieldset>
+    {{ action_buttons(submit_title="Continue") }}
+</form>
+{% endblock %}
