@@ -1,0 +1,69 @@
+
+#content-tree .text-field, li {
+    transition: 0.1s color, list-style, border linear;
+    -o-transition: 0.1s color, list-style, border linear;
+    -ms-transition: 0.1s color, list-style, border linear;
+    -moz-transition: 0.1s color, list-style, border linear;
+    -webkit-transition: 0.1s color, list-style, border linear;
+}
+
+.field-edit {
+    opacity: 0;
+}
+
+.text-field {
+    display: inline-block;
+    height: 22px;
+    white-space: nowrap;
+    width: 90%;
+}
+
+    .text-field .value {
+        overflow: hidden;
+        width: 90%;
+    }
+
+.text-field:hover {
+    color: #000;
+}
+
+.text-field .normal {
+    padding: 1px;
+}
+
+.text-field input {
+    line-height: inherit;
+    width: 80%;
+    padding: 0;
+    margin: 0;
+}
+    
+    .ajax-success .value {
+        color: green;
+    }
+    .ajax-error .value {
+        color: red;
+    }
+
+.text-field:hover .field-edit {
+    opacity: 1;
+}
+
+.lectures {
+    margin-top: 0.5em;
+}
+
+.lecture {
+    margin-top: 0.5em;
+    border-left: 3px solid #666;
+}
+
+.removed {
+    margin-top: 0;
+    border: none;
+}
+
+.drop-placeholder {
+    margin-top: 1em;
+    border: 1px #999 dashed;
+}

@@ -23,18 +23,18 @@ inbound_services:
 
 handlers:
 - url: /favicon.ico
-  static_files: main/static/img/favicon.ico
-  upload: main/static/img/favicon.ico
+  static_files: cloudlectures/static/img/favicon.ico
+  upload: cloudlectures/static/img/favicon.ico
 
 - url: /robots.txt
-  static_files: main/static/robots.txt
-  upload: main/static/robots.txt
+  static_files: cloudlectures/static/robots.txt
+  upload: cloudlectures/static/robots.txt
 
 - url: /_gae_mini_profiler/static
   static_dir: flaskext/gae_mini_profiler/static
 
 - url: /static
-  static_dir: main/static
+  static_dir: cloudlectures/static
 
 - url: .*
-  script: main.app
+  script: cloudlectures.app

@@ -1,0 +1,13 @@
+{% from "/helpers/forms.html" import form_field, action_buttons %}
+<fieldset>
+    {% if legend %}
+        <legend>{{ legend }}</legend>
+    {% endif %}
+
+    {{ form.csrf_token }}
+    {{ form_field(form.name, maxlength=500, class="input-xlarge") }}
+    {{ form_field(form.desc, maxlength=500, class="input-xlarge") }}
+    {{ form_field(form.univ, maxlength=500, class="input-xlarge") }}
+    {{ form_field(form.link, maxlength=100, class="input-xlarge monospaced") }}
+</fieldset>
+{{ action_buttons(submit_title="Save") }}

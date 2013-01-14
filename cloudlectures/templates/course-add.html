@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <form method="POST" action="" class="form-horizontal span6 offset3">
+        {% set legend = 'Add a new course' %}
+        {% include "includes/basic_data_form.html" %}
+    </form>
+</div>
+{% endblock %}

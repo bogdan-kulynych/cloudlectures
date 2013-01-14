@@ -1,0 +1,8 @@
+<div class="row span6">
+{% for course in courses %}
+<div class="well">
+    <p class="lead"><a href="{{ url_for('course_page', alias=course.link) }}">{{ course.name }}</a></p>
+    <p>{{ course.desc }} <span class="muted">/ {{ course.univ }}</span></p>
+</div>
+{% endfor %}
+</div>

@@ -8,26 +8,22 @@
             </a>
             <a class="brand" href="/">Cloud lectures</a>
             <div class="nav-collapse">
-                <ul class="nav"><!--
+                <ul class="nav pull-right">
+                    {% if admin %}
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Dropdown Menu
+                            Admin
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Item One</a></li>
-                            <li><a href="#">Item Two</a></li>
+                            <li><a href="{{ url_for('add_course') }}">Add course</a></li>
+                            <li><a href="{{ url_for('drafts') }}">Drafts</a></li>
                         </ul>
-                    </li>-->
-                    <li>
-                        <a href="https://developers.google.com/appengine/docs/python/python27/using27">App Engine docs</a>
                     </li>
-                    <li>
-                        <a href="http://flask.pocoo.org/">Flask docs</a>
+                    <li class="nav pull-right">
+                        <a href="{{ logout }}">Log out</a>
                     </li>
-                    <li>
-                        <a href="http://twitter.github.com/bootstrap">Bootstrap docs</a>
-                    </li>
+                    {% endif %}
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!-- /.navbar .container -->

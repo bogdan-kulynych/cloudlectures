@@ -7,14 +7,14 @@
  
 {%- macro form_field_description(field) -%}
     {% if field.description %}
-        <span class="help-block">{{ field.description }}</span>
+        <small class="help-block">{{ field.description|safe }}</small>
     {% endif %}
 {%- endmacro -%}
  
 {%- macro form_field_errors(field) -%}
     {% if field.errors %}
         {%- for error in field.errors -%}
-        <span class="help-inline">{{ error }}</span>
+        <small class="help-block">{{ error }}</small>
         {%- endfor -%}
     {% endif %}
 {%- endmacro -%}
@@ -30,13 +30,11 @@
     </div>
 {%- endmacro -%}
  
-{%- macro action_buttons(submit_title="OK", cancel_title="Cancel", submit_class="primary") -%}
+{%- macro action_buttons(submit_title="OK", submit_class="primary") -%}
 <div class="control-group actions">
     <div class="controls">
-        <input type="submit" class="btn {{submit_class}}" value="{{submit_title}}">
-        &nbsp;
-        <button type="reset" class="btn">{{cancel_title}}</button>
-    </controls>
+        <input type="submit" class="btn btn-{{ submit_class }}" value="{{submit_title}}">
+    </div>
 </div>
 {%- endmacro -%}
  
@@ -49,8 +47,7 @@
             {{ form_field_boolean(field, **kwargs) }}
         {% else%}
             {{ form_field_label(field) }}
-            <div class="controls">
-                <div class="input" id="{{field.id}}-div">
+            <div class="controls" id="{{field.id}}-div">
                 {% if field.type == 'RadioField' %}
                     {{ field(class='radio-group', **kwargs) }}
                 {% else %}
@@ -58,7 +55,6 @@
                 {% endif %}
                 {{ form_field_errors(field) }}
                 {{ form_field_description(field) }}
-                </div>
             </div>
         {% endif %}
     {% endif %}

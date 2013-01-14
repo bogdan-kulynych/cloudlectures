@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ course.name }}</h1>
+<p class="well-small">
+{% if not course.published %}
+    The course is not published. You can <a href="{{ url_for('course_preview', alias=course.link) }}">preview it and publish</a>
+{% else %}
+    The course is published. You can <a href="{{ url_for('course_page', alias=course.link) }}">view it and move to drafts</a>
+{% endif %}
+</p>
+{% block forms %}
+{% endblock %}
+{% endblock %}

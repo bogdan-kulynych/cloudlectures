@@ -1,0 +1,14 @@
+{% extends "course-edit.html" %}
+{% block forms %}
+<ul class="nav nav-pills">
+    <li class="active"><a href="">Basic</a></li>
+    <li><a href="{{ url_for('edit_course_content', alias=course.link) }}">Contents</a></li>
+</ul>
+<div class="pill-content">
+    <div class="pill-pane active">
+        <form method="POST" action="" class="form-horizontal span6">
+            {% include "includes/basic_data_form.html" %}
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends "course-edit.html" %}
+{% block styles %}
+<link href="/static/css/edit-content.css" rel="stylesheet" />
+{% endblock %}
+{% block forms %}
+<ul class="nav nav-pills">
+    <li><a href="{{ url_for('edit_course_basic', alias=course.link) }}">Basic</a></li>
+    <li class="active"><a href="">Contents</a></li>
+</ul>
+<div class="pill-content">
+    <div class="pill-pane active span7" id="contents">
+        <p>The course consists of units, which are collections of lectures.</p>
+        <div id="template" class="hidden unstyled">
+
+            <li class="unit well">
+                <div class="remove-container">
+                    <span class="normal pull-right">
+                        <a href="#" class="remove"><i class="icon-remove"></i></a>
+                    </span>
+                    <span class="undo hidden">
+                        <a href="#" class="remove-undo btn">Oops, bring this unit back</a>&nbsp;<a href="#" class="remove-sure btn btn-danger"><i class="icon-remove"></i>Remove</a>
+                    </span>
+                </div>
+                <div class="resize-container pull-right">
+                    <span class="normal">
+                        <a href="#" class="minimize"><i class="icon-resize-small"></i></a>
+                    </span>
+                    <span class="fullsize hidden">
+                        <a href="#" class="maximize"><i class="icon-resize-full"></i></a>
+                    </span>
+                </div>
+                <div class="fields">
+                    <div class="text-field title">
+                        <span class="normal">
+                            <span class="value">Unit title</span> <a href="#" class="field-edit"><i class="icon-pencil"></i></a>
+                        </span>
+                        <span class="edit hidden">
+                            <input type="text" value="" required> <a href="#" class="field-save"><i class="icon-ok-sign"></i></a>&nbsp;<a href="#" class="field-edit-cancel"><i class="icon-remove-sign"></i></a>
+                        </span>
+                    </div>
+                    <div class="text-field description">
+                        <span class="normal">
+                            <span class="value">Short description</span> <a href="#" class="field-edit"><i class="icon-pencil"></i></a>
+                        </span>
+                        <span class="edit hidden">
+                            <input type="text" value=""> <a href="#" class="field-save"><i class="icon-ok-sign"></i></a>&nbsp;<a href="#" class="field-edit-cancel"><i class="icon-remove-sign"></i></a>
+                        </span>
+                    </div>
+                    <ul class="lectures media-list"></ul>
+                    <div class="well-small">
+                        <a href="#" class="lecture-add btn btn-success"><i class="icon-plus"></i>&nbsp;Add a lecture</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="lecture well-small media">
+                <div class="remove-container">
+                    <span class="normal pull-right">
+                        <a href="#" class="remove"><i class="icon-remove"></i></a>
+                    </span>
+                    <span class="undo hidden">
+                        <a href="#" class="remove-undo btn">Oops, bring this lecture back</a>&nbsp;<a href="#" class="remove-sure btn btn-danger"><i class="icon-remove"></i>Remove</a>
+                    </span>
+                </div>
+                <div class="fields">
+                    <div class="preview pull-left">
+                    </div>
+                    <div class="media-body">
+                        <div class="text-field link">
+                            <span class="normal">
+                                <span class="value monospaced">Youtube video URL</span> <a href="#" class="field-edit"><i class="icon-pencil"></i></a>
+                            </span>
+                            <span class="edit hidden">
+                                <input type="text" class="monospaced" value=""> <a href="#" class="field-save"><i class="icon-ok-sign"></i></a>&nbsp;<a href="#" class="field-edit-cancel"><i class="icon-remove-sign"></i></a>
+                            </span>
+                        </div>
+                        <div class="text-field title">
+                            <span class="normal">
+                                <span class="value">Title</span> <a href="#" class="field-edit"><i class="icon-pencil"></i></a>
+                            </span>
+                            <span class="edit hidden">
+                                <input type="text" value="" required> <a href="#" class="field-save"><i class="icon-ok-sign"></i></a>&nbsp;<a href="#" class="field-edit-cancel"><i class="icon-remove-sign"></i></a>
+                            </span>
+                        </div>
+                        <div class="text-field description">
+                            <span class="normal">
+                                <span class="value">Short description</span> <a href="#" class="field-edit"><i class="icon-pencil"></i></a>
+                            </span>
+                            <span class="edit hidden">
+                                <input type="text" value=""> <a href="#" class="field-save"><i class="icon-ok-sign"></i></a>&nbsp;<a href="#" class="field-edit-cancel"><i class="icon-remove-sign"></i></a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </div>
+
+        <div>
+            <ul id="content-tree" class="unstyled"></ul>
+            <a href="#" class="unit-add btn btn-success"><i class="icon-plus"></i>&nbsp;Add a unit</a>
+            <form method="POST" action="" id="json-container">
+                {% from "/helpers/forms.html" import action_buttons %}
+                {{ form.csrf_token() }}
+                {{ form.json_data(id="json-data", value=json_data) }}
+                <hr />
+                {{ action_buttons(submit_title="Save") }}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block tscripts %}
+<!--<script src="/static/js/lib/jsv.js"></script>-->
+<script type="text/javascript" src="/static/js/lib/jquery.ui.min.js"></script>
+<script type="text/javascript" src="/static/js/lib/json2.js"></script>
+<script type="text/javascript" src="/static/js/youtube.js"></script>
+<script type="text/javascript" src="/static/js/edit-content.js"></script>
+{% endblock %}

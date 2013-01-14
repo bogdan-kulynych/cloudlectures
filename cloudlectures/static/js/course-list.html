@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block list %}
+<div class="row span6">
+{% for course in courses %}
+<div class="well">
+    <p class="lead">{{ course.title }}</p>
+    <p>{{ course.description}} <span class="muted">/ {{ course.univ }}</span></p>
+</div>
+{% endfor %}
+</div>
+{% endblock %}

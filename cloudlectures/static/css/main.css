@@ -1,4 +1,13 @@
 
-/* Main stylesheet */
+a, input {    
+    transition: 0.2s all linear;
+    -ms-transition: 0.2s all linear;
+    -moz-transition: 0.2s all linear;
+    -webkit-transition: 0.2s all linear;
+}
 
-/* Your customizations here */
+.monospaced {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-size: inherit;
+  white-space: nowrap;
+}
