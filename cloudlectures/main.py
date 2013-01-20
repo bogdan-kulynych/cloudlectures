@@ -6,13 +6,8 @@ Views
 
 import json
 
-from flask import render_template, \
-                  flash,           \
-                  url_for,         \
-                  redirect,        \
-                  request,         \
-                  abort,           \
-                  g as state       \
+from flask import render_template, flash, url_for, redirect, \
+                  request, abort, g as state
 
 from . import app
 from utils import admin_required

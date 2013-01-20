@@ -12,10 +12,9 @@ import secrets
 # Initializing application
 app = Flask('cloudlectures')
 
-
 # Configuration
 app.config.update(
-    DEBUG            = True,
+    DEBUG            = False,
     CSRF_ENABLED     = True,
     SECRET_KEY       = secrets.CSRF,
     CSRF_SESSION_KEY = secrets.SESSION
