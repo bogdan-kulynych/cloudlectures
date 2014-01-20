@@ -23,6 +23,10 @@
 - [Прототип онлайн-платформи](https://github.com/bogdan-kulynych/cloudlectures/), виконаний за допомогою Python/Flask на Google App Engine, з інтеграцією Youtube-відео
 - Онлайн-редактор на HTML5/JavaScript для створення структурованого курсу (розбиття на підчастини, описи, додаткові матеріали)
 
+Cкріншоти:
+![Редактор-1](http://i.imgur.com/XToGj7N.png)
+![Редактор-2](http://i.imgur.com/APu10LL.png)
+
 ### Не код
 
 - Попит на ринок онлайн-самоосвіти  (Coursera, Udacity, edx, Khan Academy, TED)
