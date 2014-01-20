@@ -45,7 +45,9 @@ def get_universities():
 
 
 class Course(ndb.Model):
-    """Example Model"""
+    """
+    Metadata and course contents
+    """
     name = ndb.StringProperty(required=True)
     desc = ndb.TextProperty(required=True)
     univ = ndb.TextProperty(required=True)
@@ -133,7 +135,7 @@ content_schema = {
 
 def validate_content(content):
     """
-    content - json object
+    content - JSON object
     """
     try:
         validate(content, content_schema)
